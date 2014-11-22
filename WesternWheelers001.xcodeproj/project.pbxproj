@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6305D08D16F0F28900C19F40 /* StartScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6305D08B16F0F28900C19F40 /* StartScreenViewController.m */; };
+		6305D08E16F0F28900C19F40 /* StartScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6305D08C16F0F28900C19F40 /* StartScreenViewController.xib */; };
+		6305D09116F11C3E00C19F40 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6305D09016F11C3E00C19F40 /* QuartzCore.framework */; };
+		630B3CCC1985FB650079C2E2 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 630B3CCB1985FB650079C2E2 /* Icon-76.png */; };
+		630B3CCE1985FBFA0079C2E2 /* Icon-120-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 630B3CCD1985FBFA0079C2E2 /* Icon-120-120.png */; };
+		630B3CD01985FC5F0079C2E2 /* Icon-152-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 630B3CCF1985FC5F0079C2E2 /* Icon-152-152.png */; };
+		6337D44416E5548E00F1D7BF /* Ride.m in Sources */ = {isa = PBXBuildFile; fileRef = 6337D44316E5548E00F1D7BF /* Ride.m */; };
+		6337D44716E5553400F1D7BF /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6337D44616E5553400F1D7BF /* DataModel.m */; };
+		6337D44B16E56F0500F1D7BF /* RideListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6337D44916E56F0500F1D7BF /* RideListViewController.xib */; };
+		6337D44E16E56F8900F1D7BF /* RideListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6337D44D16E56F8900F1D7BF /* RideListViewController.m */; };
+		6337D45016E697A000F1D7BF /* RideListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6337D44F16E697A000F1D7BF /* RideListCell.xib */; };
+		6337D45316E69BA000F1D7BF /* RideListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6337D45216E69BA000F1D7BF /* RideListCell.m */; };
+		63422FA417012BC9005D76D9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63422FA317012BC9005D76D9 /* MapKit.framework */; };
+		634F09A116F2779D0045E1F8 /* app_icon_960x640.png in Resources */ = {isa = PBXBuildFile; fileRef = 634F099D16F2779D0045E1F8 /* app_icon_960x640.png */; };
+		634F09A216F2779D0045E1F8 /* app_icon_1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = 634F099E16F2779D0045E1F8 /* app_icon_1024x768.png */; };
+		634F09A316F2779D0045E1F8 /* app_icon_1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 634F099F16F2779D0045E1F8 /* app_icon_1024x1024.png */; };
+		634F09A416F2779D0045E1F8 /* app_icon_1136x640.png in Resources */ = {isa = PBXBuildFile; fileRef = 634F09A016F2779D0045E1F8 /* app_icon_1136x640.png */; };
+		634F09A816F27EAE0045E1F8 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 634F09A716F27EAE0045E1F8 /* Icon-72.png */; };
+		634F09AA16F27F040045E1F8 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 634F09A916F27F040045E1F8 /* Icon-Small-50.png */; };
+		634F09AC16F280CA0045E1F8 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 634F09AB16F280CA0045E1F8 /* Icon-144.png */; };
+		634F09AF16F283B70045E1F8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 634F09AD16F2811E0045E1F8 /* Default-568h@2x.png */; };
+		6369299016EA7E4E006AFF88 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6369298E16EA7E4E006AFF88 /* Icon.png */; };
+		6369299116EA7E4E006AFF88 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6369298F16EA7E4E006AFF88 /* Icon@2x.png */; };
+		639EBFFB16EAC52500770295 /* todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 639EBFFA16EAC52500770295 /* todo.rtf */; };
+		63B896FE170244E600F2B081 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B896FD170244E600F2B081 /* CoreLocation.framework */; };
+		63B8970117024A7900F2B081 /* WebPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B8970017024A7900F2B081 /* WebPageViewController.m */; };
+		63B8970517039D1300F2B081 /* WebPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B8970417039D1300F2B081 /* WebPageViewController.xib */; };
+		63BA5B341700FC930049F71A /* InfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BA5B331700FC930049F71A /* InfoView.m */; };
+		63D7538F16E31D6A00B25240 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D7538E16E31D6A00B25240 /* UIKit.framework */; };
+		63D7539116E31D6A00B25240 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D7539016E31D6A00B25240 /* Foundation.framework */; };
+		63D7539316E31D6A00B25240 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D7539216E31D6A00B25240 /* CoreGraphics.framework */; };
+		63D7539916E31D6A00B25240 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63D7539716E31D6A00B25240 /* InfoPlist.strings */; };
+		63D7539B16E31D6A00B25240 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7539A16E31D6A00B25240 /* main.m */; };
+		63D7539F16E31D6A00B25240 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7539E16E31D6A00B25240 /* AppDelegate.m */; };
+		63D753A816E31D6A00B25240 /* RideLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D753A716E31D6A00B25240 /* RideLevelViewController.m */; };
+		63D753AB16E31D6A00B25240 /* RideDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D753AA16E31D6A00B25240 /* RideDetailViewController.m */; };
+		63D753AE16E31D6A00B25240 /* RideLevelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D753AC16E31D6A00B25240 /* RideLevelViewController.xib */; };
+		63D753B116E31D6A00B25240 /* RideDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D753AF16E31D6A00B25240 /* RideDetailViewController.xib */; };
+		63D753B916E31D6B00B25240 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D753B816E31D6B00B25240 /* SenTestingKit.framework */; };
+		63D753BA16E31D6B00B25240 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D7538E16E31D6A00B25240 /* UIKit.framework */; };
+		63D753BB16E31D6B00B25240 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D7539016E31D6A00B25240 /* Foundation.framework */; };
+		63D753C316E31D6B00B25240 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63D753C116E31D6B00B25240 /* InfoPlist.strings */; };
+		63D753C616E31D6B00B25240 /* WesternWheelers001Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D753C516E31D6B00B25240 /* WesternWheelers001Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		63D753BC16E31D6B00B25240 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63D7538316E31D6A00B25240 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63D7538A16E31D6A00B25240;
+			remoteInfo = WesternWheelers001;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6305D08A16F0F28900C19F40 /* StartScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScreenViewController.h; sourceTree = "<group>"; };
+		6305D08B16F0F28900C19F40 /* StartScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreenViewController.m; sourceTree = "<group>"; };
+		6305D08C16F0F28900C19F40 /* StartScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartScreenViewController.xib; sourceTree = "<group>"; };
+		6305D09016F11C3E00C19F40 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		630B3CCB1985FB650079C2E2 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = SOURCE_ROOT; };
+		630B3CCD1985FBFA0079C2E2 /* Icon-120-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120-120.png"; sourceTree = SOURCE_ROOT; };
+		630B3CCF1985FC5F0079C2E2 /* Icon-152-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-152-152.png"; sourceTree = SOURCE_ROOT; };
+		6337D44216E5548E00F1D7BF /* Ride.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ride.h; sourceTree = "<group>"; };
+		6337D44316E5548E00F1D7BF /* Ride.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ride.m; sourceTree = "<group>"; };
+		6337D44516E5553400F1D7BF /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		6337D44616E5553400F1D7BF /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		6337D44A16E56F0500F1D7BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RideListViewController.xib; sourceTree = "<group>"; };
+		6337D44C16E56F8900F1D7BF /* RideListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideListViewController.h; sourceTree = "<group>"; };
+		6337D44D16E56F8900F1D7BF /* RideListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideListViewController.m; sourceTree = "<group>"; };
+		6337D44F16E697A000F1D7BF /* RideListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RideListCell.xib; sourceTree = "<group>"; };
+		6337D45116E69BA000F1D7BF /* RideListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideListCell.h; sourceTree = "<group>"; };
+		6337D45216E69BA000F1D7BF /* RideListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideListCell.m; sourceTree = "<group>"; };
+		63422FA317012BC9005D76D9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		634F099D16F2779D0045E1F8 /* app_icon_960x640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_960x640.png; sourceTree = SOURCE_ROOT; };
+		634F099E16F2779D0045E1F8 /* app_icon_1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_1024x768.png; sourceTree = SOURCE_ROOT; };
+		634F099F16F2779D0045E1F8 /* app_icon_1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_1024x1024.png; sourceTree = SOURCE_ROOT; };
+		634F09A016F2779D0045E1F8 /* app_icon_1136x640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_1136x640.png; sourceTree = SOURCE_ROOT; };
+		634F09A516F277C00045E1F8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		634F09A716F27EAE0045E1F8 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
+		634F09A916F27F040045E1F8 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
+		634F09AB16F280CA0045E1F8 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = SOURCE_ROOT; };
+		634F09AD16F2811E0045E1F8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6369298E16EA7E4E006AFF88 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
+		6369298F16EA7E4E006AFF88 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		639EBFFA16EAC52500770295 /* todo.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = todo.rtf; sourceTree = "<group>"; };
+		63B896FD170244E600F2B081 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		63B896FF17024A7900F2B081 /* WebPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPageViewController.h; sourceTree = "<group>"; };
+		63B8970017024A7900F2B081 /* WebPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPageViewController.m; sourceTree = "<group>"; };
+		63B8970417039D1300F2B081 /* WebPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebPageViewController.xib; sourceTree = "<group>"; };
+		63BA5B321700FC920049F71A /* InfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoView.h; sourceTree = "<group>"; };
+		63BA5B331700FC930049F71A /* InfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoView.m; sourceTree = "<group>"; };
+		63D7538B16E31D6A00B25240 /* Western Wheelers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Western Wheelers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63D7538E16E31D6A00B25240 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		63D7539016E31D6A00B25240 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		63D7539216E31D6A00B25240 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		63D7539616E31D6A00B25240 /* WesternWheelers001-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WesternWheelers001-Info.plist"; sourceTree = "<group>"; };
+		63D7539816E31D6A00B25240 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		63D7539A16E31D6A00B25240 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		63D7539C16E31D6A00B25240 /* WesternWheelers001-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WesternWheelers001-Prefix.pch"; sourceTree = "<group>"; };
+		63D7539D16E31D6A00B25240 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		63D7539E16E31D6A00B25240 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		63D753A616E31D6A00B25240 /* RideLevelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RideLevelViewController.h; sourceTree = "<group>"; };
+		63D753A716E31D6A00B25240 /* RideLevelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RideLevelViewController.m; sourceTree = "<group>"; };
+		63D753A916E31D6A00B25240 /* RideDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RideDetailViewController.h; sourceTree = "<group>"; };
+		63D753AA16E31D6A00B25240 /* RideDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RideDetailViewController.m; sourceTree = "<group>"; };
+		63D753AD16E31D6A00B25240 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RideLevelViewController.xib; sourceTree = "<group>"; };
+		63D753B016E31D6A00B25240 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RideDetailViewController.xib; sourceTree = "<group>"; };
+		63D753B716E31D6B00B25240 /* WesternWheelers001Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WesternWheelers001Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63D753B816E31D6B00B25240 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		63D753C016E31D6B00B25240 /* WesternWheelers001Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WesternWheelers001Tests-Info.plist"; sourceTree = "<group>"; };
+		63D753C216E31D6B00B25240 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		63D753C416E31D6B00B25240 /* WesternWheelers001Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WesternWheelers001Tests.h; sourceTree = "<group>"; };
+		63D753C516E31D6B00B25240 /* WesternWheelers001Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WesternWheelers001Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63D7538816E31D6A00B25240 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63B896FE170244E600F2B081 /* CoreLocation.framework in Frameworks */,
+				63422FA417012BC9005D76D9 /* MapKit.framework in Frameworks */,
+				6305D09116F11C3E00C19F40 /* QuartzCore.framework in Frameworks */,
+				63D7538F16E31D6A00B25240 /* UIKit.framework in Frameworks */,
+				63D7539116E31D6A00B25240 /* Foundation.framework in Frameworks */,
+				63D7539316E31D6A00B25240 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63D753B316E31D6B00B25240 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63D753B916E31D6B00B25240 /* SenTestingKit.framework in Frameworks */,
+				63D753BA16E31D6B00B25240 /* UIKit.framework in Frameworks */,
+				63D753BB16E31D6B00B25240 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6337D44816E56B4D00F1D7BF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6369298D16EA7C27006AFF88 /* Images */,
+				63B8970417039D1300F2B081 /* WebPageViewController.xib */,
+				63D753AF16E31D6A00B25240 /* RideDetailViewController.xib */,
+				63D753AC16E31D6A00B25240 /* RideLevelViewController.xib */,
+				6337D44F16E697A000F1D7BF /* RideListCell.xib */,
+				6337D44916E56F0500F1D7BF /* RideListViewController.xib */,
+				6305D08C16F0F28900C19F40 /* StartScreenViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6369298D16EA7C27006AFF88 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				630B3CCB1985FB650079C2E2 /* Icon-76.png */,
+				630B3CCD1985FBFA0079C2E2 /* Icon-120-120.png */,
+				634F09AB16F280CA0045E1F8 /* Icon-144.png */,
+				634F099F16F2779D0045E1F8 /* app_icon_1024x1024.png */,
+				630B3CCF1985FC5F0079C2E2 /* Icon-152-152.png */,
+				634F099E16F2779D0045E1F8 /* app_icon_1024x768.png */,
+				634F09A016F2779D0045E1F8 /* app_icon_1136x640.png */,
+				634F099D16F2779D0045E1F8 /* app_icon_960x640.png */,
+				634F09A716F27EAE0045E1F8 /* Icon-72.png */,
+				634F09A916F27F040045E1F8 /* Icon-Small-50.png */,
+				6369298E16EA7E4E006AFF88 /* Icon.png */,
+				6369298F16EA7E4E006AFF88 /* Icon@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		63D7538216E31D6A00B25240 = {
+			isa = PBXGroup;
+			children = (
+				63B896FD170244E600F2B081 /* CoreLocation.framework */,
+				63422FA317012BC9005D76D9 /* MapKit.framework */,
+				634F09AD16F2811E0045E1F8 /* Default-568h@2x.png */,
+				634F09A516F277C00045E1F8 /* Default@2x.png */,
+				63D7538D16E31D6A00B25240 /* Frameworks */,
+				63D7538C16E31D6A00B25240 /* Products */,
+				63D7539416E31D6A00B25240 /* WesternWheelers001 */,
+				63D753BE16E31D6B00B25240 /* WesternWheelers001Tests */,
+			);
+			sourceTree = "<group>";
+		};
+		63D7538C16E31D6A00B25240 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63D7538B16E31D6A00B25240 /* Western Wheelers.app */,
+				63D753B716E31D6B00B25240 /* WesternWheelers001Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63D7538D16E31D6A00B25240 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6305D09016F11C3E00C19F40 /* QuartzCore.framework */,
+				63D7539216E31D6A00B25240 /* CoreGraphics.framework */,
+				63D7539016E31D6A00B25240 /* Foundation.framework */,
+				63D753B816E31D6B00B25240 /* SenTestingKit.framework */,
+				63D7538E16E31D6A00B25240 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63D7539416E31D6A00B25240 /* WesternWheelers001 */ = {
+			isa = PBXGroup;
+			children = (
+				63D7539D16E31D6A00B25240 /* AppDelegate.h */,
+				63D7539E16E31D6A00B25240 /* AppDelegate.m */,
+				6337D44516E5553400F1D7BF /* DataModel.h */,
+				6337D44616E5553400F1D7BF /* DataModel.m */,
+				63BA5B321700FC920049F71A /* InfoView.h */,
+				63BA5B331700FC930049F71A /* InfoView.m */,
+				6337D44816E56B4D00F1D7BF /* Resources */,
+				6337D44216E5548E00F1D7BF /* Ride.h */,
+				6337D44316E5548E00F1D7BF /* Ride.m */,
+				63D753A916E31D6A00B25240 /* RideDetailViewController.h */,
+				63D753AA16E31D6A00B25240 /* RideDetailViewController.m */,
+				63D753A616E31D6A00B25240 /* RideLevelViewController.h */,
+				63D753A716E31D6A00B25240 /* RideLevelViewController.m */,
+				6337D45116E69BA000F1D7BF /* RideListCell.h */,
+				6337D45216E69BA000F1D7BF /* RideListCell.m */,
+				6337D44C16E56F8900F1D7BF /* RideListViewController.h */,
+				6337D44D16E56F8900F1D7BF /* RideListViewController.m */,
+				6305D08A16F0F28900C19F40 /* StartScreenViewController.h */,
+				6305D08B16F0F28900C19F40 /* StartScreenViewController.m */,
+				63D7539516E31D6A00B25240 /* Supporting Files */,
+				639EBFFA16EAC52500770295 /* todo.rtf */,
+				63B896FF17024A7900F2B081 /* WebPageViewController.h */,
+				63B8970017024A7900F2B081 /* WebPageViewController.m */,
+			);
+			path = WesternWheelers001;
+			sourceTree = "<group>";
+		};
+		63D7539516E31D6A00B25240 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63D7539616E31D6A00B25240 /* WesternWheelers001-Info.plist */,
+				63D7539716E31D6A00B25240 /* InfoPlist.strings */,
+				63D7539A16E31D6A00B25240 /* main.m */,
+				63D7539C16E31D6A00B25240 /* WesternWheelers001-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63D753BE16E31D6B00B25240 /* WesternWheelers001Tests */ = {
+			isa = PBXGroup;
+			children = (
+				63D753C416E31D6B00B25240 /* WesternWheelers001Tests.h */,
+				63D753C516E31D6B00B25240 /* WesternWheelers001Tests.m */,
+				63D753BF16E31D6B00B25240 /* Supporting Files */,
+			);
+			path = WesternWheelers001Tests;
+			sourceTree = "<group>";
+		};
+		63D753BF16E31D6B00B25240 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63D753C016E31D6B00B25240 /* WesternWheelers001Tests-Info.plist */,
+				63D753C116E31D6B00B25240 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63D7538A16E31D6A00B25240 /* WesternWheelers001 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63D753C916E31D6B00B25240 /* Build configuration list for PBXNativeTarget "WesternWheelers001" */;
+			buildPhases = (
+				63D7538716E31D6A00B25240 /* Sources */,
+				63D7538816E31D6A00B25240 /* Frameworks */,
+				63D7538916E31D6A00B25240 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WesternWheelers001;
+			productName = WesternWheelers001;
+			productReference = 63D7538B16E31D6A00B25240 /* Western Wheelers.app */;
+			productType = "com.apple.product-type.application";
+		};
+		63D753B616E31D6B00B25240 /* WesternWheelers001Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63D753CC16E31D6B00B25240 /* Build configuration list for PBXNativeTarget "WesternWheelers001Tests" */;
+			buildPhases = (
+				63D753B216E31D6B00B25240 /* Sources */,
+				63D753B316E31D6B00B25240 /* Frameworks */,
+				63D753B416E31D6B00B25240 /* Resources */,
+				63D753B516E31D6B00B25240 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63D753BD16E31D6B00B25240 /* PBXTargetDependency */,
+			);
+			name = WesternWheelers001Tests;
+			productName = WesternWheelers001Tests;
+			productReference = 63D753B716E31D6B00B25240 /* WesternWheelers001Tests.octest */;
+			productType = "com.apple.product-type.bundle.ocunit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63D7538316E31D6A00B25240 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastTestingUpgradeCheck = 0610;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = David;
+				TargetAttributes = {
+					63D7538A16E31D6A00B25240 = {
+						DevelopmentTeam = 4MFY8UWD3R;
+					};
+				};
+			};
+			buildConfigurationList = 63D7538616E31D6A00B25240 /* Build configuration list for PBXProject "WesternWheelers001" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 63D7538216E31D6A00B25240;
+			productRefGroup = 63D7538C16E31D6A00B25240 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63D7538A16E31D6A00B25240 /* WesternWheelers001 */,
+				63D753B616E31D6B00B25240 /* WesternWheelers001Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63D7538916E31D6A00B25240 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630B3CCE1985FBFA0079C2E2 /* Icon-120-120.png in Resources */,
+				63D7539916E31D6A00B25240 /* InfoPlist.strings in Resources */,
+				63D753AE16E31D6A00B25240 /* RideLevelViewController.xib in Resources */,
+				63D753B116E31D6A00B25240 /* RideDetailViewController.xib in Resources */,
+				6337D44B16E56F0500F1D7BF /* RideListViewController.xib in Resources */,
+				6337D45016E697A000F1D7BF /* RideListCell.xib in Resources */,
+				6369299016EA7E4E006AFF88 /* Icon.png in Resources */,
+				6369299116EA7E4E006AFF88 /* Icon@2x.png in Resources */,
+				639EBFFB16EAC52500770295 /* todo.rtf in Resources */,
+				6305D08E16F0F28900C19F40 /* StartScreenViewController.xib in Resources */,
+				634F09A116F2779D0045E1F8 /* app_icon_960x640.png in Resources */,
+				634F09A216F2779D0045E1F8 /* app_icon_1024x768.png in Resources */,
+				634F09A316F2779D0045E1F8 /* app_icon_1024x1024.png in Resources */,
+				634F09A416F2779D0045E1F8 /* app_icon_1136x640.png in Resources */,
+				634F09A816F27EAE0045E1F8 /* Icon-72.png in Resources */,
+				634F09AA16F27F040045E1F8 /* Icon-Small-50.png in Resources */,
+				634F09AC16F280CA0045E1F8 /* Icon-144.png in Resources */,
+				630B3CD01985FC5F0079C2E2 /* Icon-152-152.png in Resources */,
+				630B3CCC1985FB650079C2E2 /* Icon-76.png in Resources */,
+				634F09AF16F283B70045E1F8 /* Default-568h@2x.png in Resources */,
+				63B8970517039D1300F2B081 /* WebPageViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63D753B416E31D6B00B25240 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63D753C316E31D6B00B25240 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63D753B516E31D6B00B25240 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63D7538716E31D6A00B25240 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63D7539B16E31D6A00B25240 /* main.m in Sources */,
+				63D7539F16E31D6A00B25240 /* AppDelegate.m in Sources */,
+				63D753A816E31D6A00B25240 /* RideLevelViewController.m in Sources */,
+				63D753AB16E31D6A00B25240 /* RideDetailViewController.m in Sources */,
+				6337D44416E5548E00F1D7BF /* Ride.m in Sources */,
+				6337D44716E5553400F1D7BF /* DataModel.m in Sources */,
+				6337D44E16E56F8900F1D7BF /* RideListViewController.m in Sources */,
+				6337D45316E69BA000F1D7BF /* RideListCell.m in Sources */,
+				6305D08D16F0F28900C19F40 /* StartScreenViewController.m in Sources */,
+				63BA5B341700FC930049F71A /* InfoView.m in Sources */,
+				63B8970117024A7900F2B081 /* WebPageViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63D753B216E31D6B00B25240 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63D753C616E31D6B00B25240 /* WesternWheelers001Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63D753BD16E31D6B00B25240 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63D7538A16E31D6A00B25240 /* WesternWheelers001 */;
+			targetProxy = 63D753BC16E31D6B00B25240 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6337D44916E56F0500F1D7BF /* RideListViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6337D44A16E56F0500F1D7BF /* en */,
+			);
+			name = RideListViewController.xib;
+			sourceTree = "<group>";
+		};
+		63D7539716E31D6A00B25240 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63D7539816E31D6A00B25240 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		63D753AC16E31D6A00B25240 /* RideLevelViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63D753AD16E31D6A00B25240 /* en */,
+			);
+			name = RideLevelViewController.xib;
+			sourceTree = "<group>";
+		};
+		63D753AF16E31D6A00B25240 /* RideDetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63D753B016E31D6A00B25240 /* en */,
+			);
+			name = RideDetailViewController.xib;
+			sourceTree = "<group>";
+		};
+		63D753C116E31D6B00B25240 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63D753C216E31D6B00B25240 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		63D753C716E31D6B00B25240 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: David Murphy (4MFY8UWD3R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		63D753C816E31D6B00B25240 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: David Murphy (4MFY8UWD3R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: David Murphy";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1C44B4C-C835-47CC-B504-76E7D86297E0";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63D753CA16E31D6B00B25240 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WesternWheelers001/WesternWheelers001-Prefix.pch";
+				INFOPLIST_FILE = "WesternWheelers001/WesternWheelers001-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "Western Wheelers";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		63D753CB16E31D6B00B25240 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WesternWheelers001/WesternWheelers001-Prefix.pch";
+				INFOPLIST_FILE = "WesternWheelers001/WesternWheelers001-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "Western Wheelers";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		63D753CD16E31D6B00B25240 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WesternWheelers001.app/WesternWheelers001";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WesternWheelers001/WesternWheelers001-Prefix.pch";
+				INFOPLIST_FILE = "WesternWheelers001Tests/WesternWheelers001Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		63D753CE16E31D6B00B25240 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WesternWheelers001.app/WesternWheelers001";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WesternWheelers001/WesternWheelers001-Prefix.pch";
+				INFOPLIST_FILE = "WesternWheelers001Tests/WesternWheelers001Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63D7538616E31D6A00B25240 /* Build configuration list for PBXProject "WesternWheelers001" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63D753C716E31D6B00B25240 /* Debug */,
+				63D753C816E31D6B00B25240 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63D753C916E31D6B00B25240 /* Build configuration list for PBXNativeTarget "WesternWheelers001" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63D753CA16E31D6B00B25240 /* Debug */,
+				63D753CB16E31D6B00B25240 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63D753CC16E31D6B00B25240 /* Build configuration list for PBXNativeTarget "WesternWheelers001Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63D753CD16E31D6B00B25240 /* Debug */,
+				63D753CE16E31D6B00B25240 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63D7538316E31D6A00B25240 /* Project object */;
+}
