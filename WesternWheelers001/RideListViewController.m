@@ -13,7 +13,6 @@
 @implementation RideListViewController
 
 @synthesize rideListCell = _rideListCell;
-//@synthesize tableView=_tableView; //this wrecks the ablity of the table to insert new rows but it was claimed to be required to support a custom NIB cell view?
 
 /* -------------------------- http ------------------------*/
 
@@ -52,7 +51,7 @@
     int row;
     for (int i=0; i<_objects.count; i++) {
         Ride *ride = [_objects objectAtIndex:i];
-        if (ride.rideid==newRide.rideid) {
+        if ([newRide isSameRide:ride.rideEventNumber date:ride.rideDate]) {
             [_objects setObject:newRide atIndexedSubscript:i];
             exists=1;
             row=i;
@@ -73,11 +72,8 @@
 {
     if (newRide==nil) return;
     [_objects addObject:newRide];
-    //[self.tableView beginUpdates];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_objects.count-1 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    //[self.tableView reloadData];
-    //[self.tableView endUpdates];
 }
 
 - (void) insertUsersRide {
@@ -85,7 +81,6 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //return 100.0f;
     return 80.f;
 }
 
@@ -93,7 +88,7 @@
 {
     [super viewDidLoad];
     self.tableView.rowHeight=100.f;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationOfData:) name:@"RidesLoaded" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationOfData:) name:@"AllRidesLoaded" object:nil];
 }
 
 - (void) setCurrentRide {
@@ -116,7 +111,6 @@
         self.firstAppearance=0;
     }
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -149,19 +143,18 @@
     cell.lblTitle.text = ride.title;
 
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-    //[fmt setDateFormat:@"MMM dd, yyy HH:mm"];
     [fmt setDateStyle:NSDateFormatterFullStyle];
     cell.lblDate.text= [fmt stringFromDate:ride.rideDate];
-    NSDate *now = [[NSDate alloc] init];
+    /*
+    NSDate *now = [[NSDate alloc] init]; //gray out rides in the past
     if ([ride.rideDate compare:now] != NSOrderedDescending) {
         cell.lblDate.textColor = [UIColor grayColor];
         cell.lblTitle.textColor = [UIColor grayColor];
         cell.lblLevel.textColor = [UIColor grayColor];
         cell.lblImpromtu.textColor = [UIColor grayColor];
-    }
+    }*/
     cell.lblId.text= @"";
     cell.lblLevel.text=ride.rideLevel;
-    //cell.lblStart.text = ride.locationDescription;
     if (ride.isImpromtu) cell.lblImpromtu.text = @"Impromtu"; else cell.lblImpromtu.text=@"";
     return cell;
 }

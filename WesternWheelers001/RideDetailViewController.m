@@ -28,7 +28,7 @@
         self.coordinate = self.ride.locationPoint;
 
         [self.testMap addAnnotation:self];
-        self.lblMapStatus.text=@"approximate location only - see ride page for start location";
+        self.lblMapStatus.text=@"Approximate location only - see ride page for start location";
     }
     [self.view setNeedsDisplay];
     
@@ -37,7 +37,7 @@
 -(void) notificationOfData:(NSNotification*) n {
     NSDictionary *d = n.userInfo;
     Ride* ride = [d objectForKey:@"ride"];
-    if ([ride.rideid isEqual:self.ride.rideid]) {
+    if ([ride isSameRide:self.ride.rideEventNumber date:self.ride.rideDate]) {
         [self setupDetails];
     }
 }
@@ -54,7 +54,7 @@
         [self setupDetails];
     }
     else {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationOfData:) name:@"RideLoaded" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationOfData:) name:@"RideGeoLocated" object:nil];
         [NSThread detachNewThreadSelector:@selector(loadRideDetails) toTarget:self withObject:nil];
     }
     
@@ -67,8 +67,7 @@
 }
 
 - (void) loadRideDetails {
-    //[NSThread sleepForTimeInterval:2];    
-    [[DataModel getInstance] getRideDetails:self.ride.rideid];
+    [[DataModel getInstance] getRideDetails:self.ride.rideEventNumber rideDate:self.ride.rideDate];
 }
 
 - (IBAction)loadMapPressed {

@@ -14,7 +14,7 @@ int dataLoaded=0;
 -(void) notifiedOfDataLoaded {
     //Once the data is loaded take down the start status screen
     dataLoaded=1;
-    /* any attempt to modify UIKIt views from this thread fail. Dont know why... UIKit can only be  modified from main thread*/
+    /* any attempt to modify UIKIt views from this thread fails. Dont know why... UIKit can only be  modified from main thread*/
     //[start.view setHidden:YES];
 }
 
@@ -44,11 +44,11 @@ int dataLoaded=0;
     [self.window makeKeyAndVisible];
 
     [DataModel getInstance]; //force init here
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedOfDataLoaded) name:@"RidesLoaded" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifiedOfDataLoaded) name:@"AllRidesLoaded" object:nil];
 
     start = [[StartScreenViewController alloc] initWithNibName:@"StartScreenViewController" bundle:nil];
     start.view.layer.borderWidth=2;
-    //start.view.layer.cornerRadius=7;
+    start.view.layer.cornerRadius=24;
     [NSThread detachNewThreadSelector:@selector(timeoutNetworkLoad) toTarget:self withObject:nil];
     [self.window addSubview:[start view]];
 }
@@ -73,12 +73,9 @@ int dataLoaded=0;
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"AppIsActive" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AppIsActive" object:nil];
     CGRect rect = CGRectMake(50, 120, 200, 70);
-    //CGRect rect = CGRectMake(fr.size.width/100, fr.size.height/100, fr.size.width/2, 70);
-    //CGRect rect = CGRectMake(50, 50, 300, 40);
     start.view.frame = rect;
-
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

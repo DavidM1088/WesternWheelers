@@ -323,8 +323,8 @@
 		63D7538316E31D6A00B25240 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastTestingUpgradeCheck = 0610;
-				LastUpgradeCheck = 0460;
+				LastTestingUpgradeCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = David;
 				TargetAttributes = {
 					63D7538A16E31D6A00B25240 = {
@@ -501,6 +501,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: David Murphy (4MFY8UWD3R)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -554,6 +555,7 @@
 				GCC_PREFIX_HEADER = "WesternWheelers001/WesternWheelers001-Prefix.pch";
 				INFOPLIST_FILE = "WesternWheelers001/WesternWheelers001-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmurphy.westernwheelers;
 				PRODUCT_NAME = "Western Wheelers";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -570,6 +572,7 @@
 				GCC_PREFIX_HEADER = "WesternWheelers001/WesternWheelers001-Prefix.pch";
 				INFOPLIST_FILE = "WesternWheelers001/WesternWheelers001-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmurphy.westernwheelers;
 				PRODUCT_NAME = "Western Wheelers";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -588,6 +591,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WesternWheelers001/WesternWheelers001-Prefix.pch";
 				INFOPLIST_FILE = "WesternWheelers001Tests/WesternWheelers001Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "d.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -605,6 +609,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WesternWheelers001/WesternWheelers001-Prefix.pch";
 				INFOPLIST_FILE = "WesternWheelers001Tests/WesternWheelers001Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "d.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;

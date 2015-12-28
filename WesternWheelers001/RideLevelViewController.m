@@ -9,6 +9,7 @@
 @end
 
 DataModel *dataModel=nil;
+NSThread *latestStatsViewThread = nil;
 
 @implementation RideLevelViewController
 /* -------------------------- http ------------------------*/
@@ -27,6 +28,8 @@ DataModel *dataModel=nil;
     [_objects addObject:@"E Rides"];
     [_objects addObject:@"All Rides"];
     dataModel = [DataModel getInstance];
+    //add observer here to make sure its added before stats loaded notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationOfStats:) name:@"StatsLoaded" object:nil];
     return self;
 }
 							
@@ -75,27 +78,88 @@ DataModel *dataModel=nil;
     [self.infoBar sizeToFit];
     self.infoBar.showsCancelButton=YES;
 
-
     /* info view footer */
     self.infoView = [[InfoView alloc] init];
-    self.infoView.backgroundColor = [UIColor lightGrayColor];
+    //self.infoView.backgroundColor = [UIColor lightGrayColor];
     CGRect rect;
     rect.size.width=100;
-    rect.size.height=40;
+    rect.size.height=140;
     rect.origin.x=0;
     rect.origin.y=0;
     [self.infoView setFrame:rect];
     
-    UIButton *footerBtn =[UIButton buttonWithType:UIButtonTypeInfoLight];
-    CGRect fr = footerBtn.frame;
-    fr.origin.y += 10;
-    fr.origin.x += 10;
-    footerBtn.frame = fr;
-    [footerBtn addTarget:self action:@selector(showInfo) forControlEvents:UIControlEventTouchDown];
-    [footerBtn setTitle:@"info" forState:UIControlStateNormal];
-    [self.infoView addSubview:footerBtn];
-    [self.tableView setTableFooterView:self.infoView];
+    //lay out components in the statistics view
+    NSInteger row = 10;
+    NSInteger margin = 10;
+    NSInteger height = 18;
+    NSInteger width = 400;
+
+    UILabel *line=[[UILabel alloc]initWithFrame:CGRectMake(0, row, width, height/8)];
+    [line setBackgroundColor:[UIColor lightGrayColor]];
+    [self.infoView addSubview:line];
+
+    row += height/4;
+    self.statsTitle=[[UILabel alloc]initWithFrame:CGRectMake(margin, row, width, height)];
+    [self.statsTitle setTextColor:[UIColor blueColor]];
+    [self.infoView addSubview:self.statsTitle];
     
+    row += height;
+    self.statsMsg1 =[[UITextView alloc]initWithFrame:CGRectMake(margin, row, (width*2)/3, height*2)];
+    [self.statsMsg1 setEditable:false];
+    [self.infoView addSubview:self.statsMsg1];
+    
+    row += 2 *height;
+    self.statsMsg2=[[UITextView alloc]initWithFrame:CGRectMake(margin, row, (width*2)/3, height*3)];
+    [self.statsMsg2 setEditable:false];
+    [self.infoView addSubview:self.statsMsg2];
+
+    row += 3 * height;
+    UIButton *infoBtn =[UIButton buttonWithType:UIButtonTypeInfoLight];
+    //UIButton *infoBtn =[UIButton buttonWithType:UIButtonTypeRoundedRect];
+    //[infoBtn setTitle:@"Ride Info" forState:UIControlStateNormal];
+    [infoBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    infoBtn.frame = CGRectMake(0, row, 40, height);
+    [infoBtn addTarget:self action:@selector(showInfo) forControlEvents:UIControlEventTouchDown];
+    [self.infoView addSubview:infoBtn];
+    
+    [self.tableView setTableFooterView:self.infoView];
+    //[NSThread detachNewThreadSelector:@selector(notificationOfStats) toTarget:self withObject:nil];
+}
+
+- (void) showRandomStats {
+    DataModel *m = [DataModel getInstance];
+    NSArray *leaders = m.getStatsLeaders;
+    if (leaders.count > 0) {
+        [self.statsTitle setText:@"Hall of Fame"];
+        int index = arc4random() %(leaders.count);
+        NSString *line = leaders[index];
+        [self.statsMsg1 setText:line];
+        [self.statsMsg1 setNeedsDisplay];
+    }
+    NSArray *riders = m.getStatsRiders;
+    if (riders.count > 0) {
+        [self.statsTitle setText:@"Hall of Fame"];
+        int index = arc4random() %(riders.count);
+        NSString *line = riders[index];
+        [self.statsMsg2 setText:line];
+        [self.statsMsg2 setNeedsDisplay];
+    }
+}
+
+-(void) notificationOfStats:(NSNotification*) n {
+    //NSLog(@"---> stats thread START old:%@ new:%@", latestStatsViewThread, [NSThread currentThread]);
+    latestStatsViewThread = [NSThread currentThread];
+    while (1) {
+        NSThread *thisThread = [NSThread currentThread];
+        if (thisThread != latestStatsViewThread) {
+            //NSLog(@"---> stats thread EXIT :%@", thisThread);
+            break;
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showRandomStats];
+        });
+        [NSThread sleepForTimeInterval:20]; //seconds
+    }
 }
 
 -(void) showInfo {
@@ -168,22 +232,6 @@ DataModel *dataModel=nil;
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

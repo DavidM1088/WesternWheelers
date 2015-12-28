@@ -8,6 +8,8 @@ extern int RIDESET_SEARCH;
 @interface DataModel : NSObject {
     NSMutableArray *_rideList;
     NSMutableArray *_eventLog;
+    NSMutableArray *_statsLeaders;
+    NSMutableArray *_statsRiders;
 }
 
 +(DataModel *) getInstance;
@@ -18,9 +20,14 @@ extern int RIDESET_SEARCH;
 -(NSArray *) getEventLog;
 - (void) addEvent:(NSObject*) event;
 - (NSArray*) getRides:(int) type tag:(NSString*) tag error:(NSError **)outError;
-- (void) getRideDetails:(NSString*) rideId;
+- (NSArray*) getStatsLeaders;
+- (NSArray*) getStatsRiders;
+- (void) getRideDetails:(NSString*) rideId rideDate:(NSDate*) rideDate;
 
 @property (nonatomic, strong) NSMutableArray *rideList;
+@property (nonatomic, strong) NSMutableArray *statsLeaders;
+@property (nonatomic, strong) NSMutableArray *statsRiders;
+
 @property int currentRideSetType;
 @property (nonatomic, strong) NSString *currentRideSetTag;
 

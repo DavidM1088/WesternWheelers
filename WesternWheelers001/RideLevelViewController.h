@@ -11,4 +11,7 @@
 @property (strong, nonatomic) UISearchBar *searchBar;
 @property (strong, nonatomic) UISearchBar *infoBar;
 @property (strong, nonatomic) InfoView *infoView;
+@property (strong, nonatomic) UILabel *statsTitle;
+@property (strong, nonatomic) UITextView *statsMsg1;
+@property (strong, nonatomic) UITextView *statsMsg2;
 @end
