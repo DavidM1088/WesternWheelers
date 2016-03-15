@@ -9,7 +9,8 @@
 
 @implementation RideDetailViewController
 
-#pragma mark - Managing the detail item
+#pragma mark - Managing the detail item for all rides
+
 
 -(void) setupDetails {
     self.lblLocationDescription.text = self.ride.locationDescription;
