@@ -21,8 +21,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"Rides List", @"Rides List");
+        _objects = [[NSMutableArray alloc] init];
     }
-    _objects = [[NSMutableArray alloc] init];
     return self;
 }
 
@@ -106,6 +106,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     if (self.firstAppearance) {
         [self setCurrentRide];
         self.firstAppearance=0;
