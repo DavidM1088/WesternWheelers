@@ -155,7 +155,7 @@
     }*/
     cell.lblId.text= @"";
     cell.lblLevel.text=ride.rideLevel;
-    if (ride.isImpromtu) cell.lblImpromtu.text = @"Impromtu"; else cell.lblImpromtu.text=@"";
+    if (ride.isImpromtu) cell.lblImpromtu.text = @"Impromptu"; else cell.lblImpromtu.text=@"";
     return cell;
 }
 
