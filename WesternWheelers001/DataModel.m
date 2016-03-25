@@ -30,6 +30,12 @@ NSError *httpError=nil;
 - (DataModel*) init {
     self = [super init];
     _eventLog = [[NSMutableArray alloc] init];
+    NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *appLog = [NSString stringWithFormat:@"App version %@", appVersion];
+
+    NSLog(@"%@", appLog);
+    [self addEvent:appLog];
+
     _rideList = [[NSMutableArray alloc] init];
     _statsLeaders = [[NSMutableArray alloc] init];
     _statsRiders = [[NSMutableArray alloc] init];
@@ -319,11 +325,19 @@ NSMutableData *responseData;
     
     //loop thru xml data looking for ride <items>
 
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
-    [dateFormat setLocale:[NSLocale currentLocale]];
-    [dateFormat setFormatterBehavior:NSDateFormatterBehaviorDefault];
-    [dateFormat setDateFormat:@"dd MMM yyyy"];
+    //Dates are in GMT time zone in the RSS feed but need to displayed in PST on the app
+    //They are not necessarily displayed in the users loca time zone.
+    //e.g. even if the user is visiting Europe the ride schedule should still show PDT time
+    NSDateFormatter *dateFormatGMT = [[NSDateFormatter alloc] init];
+    [dateFormatGMT setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [dateFormatGMT setLocale:[NSLocale currentLocale]];
+    [dateFormatGMT setFormatterBehavior:NSDateFormatterBehaviorDefault];
+    [dateFormatGMT setDateFormat:@"dd MMM yyyy HH:mm:ss"];
+
+    //NSTimeZone *timezonePDT = [NSTimeZone systemTimeZone];
+    //NSLog(@"%@", [NSTimeZone knownTimeZoneNames]);
+    NSTimeZone* timezonePDT = [NSTimeZone timeZoneWithName:@"America/Los_Angeles"];
+
     int totRidesScanned=0;
     int totRidesAdded=0;
     
@@ -352,15 +366,18 @@ NSMutableData *responseData;
         NSRange rng;
         rng.location = 5;
         rng.length = 11;
+        rng.length = 20;
         eventDateStr = [eventDateStr substringWithRange:rng];
         
-        NSDate *eventDate = [dateFormat dateFromString:eventDateStr];
+        NSDate *eventDateGMT = [dateFormatGMT dateFromString:eventDateStr];
         
-        if (eventDate != nil) {
+        if (eventDateGMT != nil) {
             int found=0;
-            Ride *newRide= [[Ride alloc] initFromEvent:event rideDate:eventDate];
+            float offsetSeconds = [timezonePDT secondsFromGMTForDate:eventDateGMT];
+            NSDate *eventDatePDT = [eventDateGMT dateByAddingTimeInterval:offsetSeconds];
+            //NSLog(@"----> %@ [%@] [%@] %@",eventDateStr, eventDateGMT, eventDatePDT, eventTitle);
+            Ride *newRide= [[Ride alloc] initFromEvent:event rideDate:eventDatePDT];
             if (true) {
-
                 //check if we have it already from a previous load.
                 //Rides are loaded whenever the app goes active so we only want rides added to the site since the last load.
                 for (Ride *r in self.rideList) {
