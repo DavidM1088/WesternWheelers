@@ -57,7 +57,7 @@ NSError *httpError=nil;
      active this thread will resume and immediately load the data fresh. If the app just stays active the data
      will be refreshed periodically as per the refresh minutes below*/
     int done=0;
-    NSInteger lastError=0;
+    //NSInteger lastError=0;
     while (!done) {
         [self loadAllFromRSSPage];
         if (httpError.code == 0) {
@@ -67,7 +67,7 @@ NSError *httpError=nil;
         else {
             //[NSThread sleepForTimeInterval:afterFailRefreshMins * 60];
         }
-        lastError=httpError.code;
+        //lastError=httpError.code;
         done=1; //dont keep thread alive..
     }
     firstLoad=0;
@@ -108,7 +108,7 @@ NSError *httpError=nil;
     NSInteger year = [components year];
     
     /* ride leaders */
-    NSString *url = [NSString stringWithFormat:@"http://www.westernwheelers.org/main/stats/%ld/wwstat%ldleader1.htm", (long)year, year-2000];
+    NSString *url = [NSString stringWithFormat:@"http://www.westernwheelers.org/main/stats/%d/wwstat%dleader1.htm", year, year-2000];
     NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     NSURLResponse * response = nil;
     NSError *error = nil;
@@ -134,7 +134,7 @@ NSError *httpError=nil;
 
     /* riders */
 
-    url = [NSString stringWithFormat:@"http://www.westernwheelers.org/main/stats/%ld/wwstat%ld.htm", (long)year, year-2000];
+    url = [NSString stringWithFormat:@"http://www.westernwheelers.org/main/stats/%d/wwstat%d.htm", year, year-2000];
     urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     response = nil;
     error = nil;
@@ -244,7 +244,8 @@ NSError *httpError=nil;
 {
     if (self.rideList.count==0 && httpError != nil) {
         //if we already have rides return them even if they have not been updated from the web page recently
-        *outError = httpError;
+        if (outError != nil)
+            *outError = httpError;
         return nil;
     }
     NSMutableArray *rides = [[NSMutableArray alloc] init];
