@@ -19,14 +19,14 @@ NSThread *latestStatsViewThread = nil;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"Ride Levels", @"Ride Levels");
+        _objects = [[NSMutableArray alloc] init];
+        [_objects addObject:@"A Rides"];
+        [_objects addObject:@"B Rides"];
+        [_objects addObject:@"C Rides"];
+        [_objects addObject:@"D Rides"];
+        [_objects addObject:@"E Rides"];
+        [_objects addObject:@"All Rides"];
     }
-    _objects = [[NSMutableArray alloc] init];
-    [_objects addObject:@"A Rides"];
-    [_objects addObject:@"B Rides"];
-    [_objects addObject:@"C Rides"];
-    [_objects addObject:@"D Rides"];
-    [_objects addObject:@"E Rides"];
-    [_objects addObject:@"All Rides"];
     dataModel = [DataModel getInstance];
     //add observer here to make sure its added before stats loaded notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationOfStats:) name:@"StatsLoaded" object:nil];
