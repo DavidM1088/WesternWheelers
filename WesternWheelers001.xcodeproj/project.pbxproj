@@ -323,12 +323,12 @@
 		63D7538316E31D6A00B25240 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastTestingUpgradeCheck = 0720;
+				LastTestingUpgradeCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = David;
 				TargetAttributes = {
 					63D7538A16E31D6A00B25240 = {
-						DevelopmentTeam = 4MFY8UWD3R;
+						DevelopmentTeam = H59SUFFA2M;
 					};
 				};
 			};
@@ -574,7 +574,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmurphy.westernwheelers;
 				PRODUCT_NAME = "Western Wheelers";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "67ce4f9d-b28b-41de-b819-f19f9cc33d42";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
