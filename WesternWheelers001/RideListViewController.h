@@ -12,7 +12,7 @@
 @property int rideSetType;
 
 @property (strong, nonatomic) IBOutlet RideListCell *rideListCell;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+//@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *lblLoadNum;
 @property int firstAppearance;
 
