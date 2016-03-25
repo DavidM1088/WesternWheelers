@@ -105,10 +105,10 @@ NSError *httpError=nil;
     self.statsRiders = [[NSMutableArray alloc] init];
     
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
-    NSInteger year = [components year];
+    long year = (long)[components year];
     
     /* ride leaders */
-    NSString *url = [NSString stringWithFormat:@"http://www.westernwheelers.org/main/stats/%d/wwstat%dleader1.htm", year, year-2000];
+    NSString *url = [NSString stringWithFormat:@"http://www.westernwheelers.org/main/stats/%ld/wwstat%ldleader1.htm", year, year-2000];
     NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     NSURLResponse * response = nil;
     NSError *error = nil;
@@ -134,7 +134,7 @@ NSError *httpError=nil;
 
     /* riders */
 
-    url = [NSString stringWithFormat:@"http://www.westernwheelers.org/main/stats/%d/wwstat%d.htm", year, year-2000];
+    url = [NSString stringWithFormat:@"http://www.westernwheelers.org/main/stats/%ld/wwstat%ld.htm", year, year-2000];
     urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     response = nil;
     error = nil;
