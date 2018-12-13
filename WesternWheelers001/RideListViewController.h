@@ -8,6 +8,7 @@
 -(void) assignRideSet:(int) setType level:(NSString*) rideSet ;
 
 @property (strong, nonatomic) RideDetailViewController *detailViewController;
+@property (strong, nonatomic) WebPageViewController *webPageViewController;
 @property (strong, nonatomic) NSString* rideSet;
 @property int rideSetType;
 

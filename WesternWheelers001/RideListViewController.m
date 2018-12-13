@@ -202,9 +202,14 @@
     if (!self.detailViewController) {
         self.detailViewController = [[RideDetailViewController alloc] initWithNibName:@"RideDetailViewController" bundle:nil];
     }
+    if (!self.webPageViewController) {
+        self.webPageViewController = [[WebPageViewController alloc] initWithNibName:@"WebPageViewController" bundle:nil];
+    }
     Ride *ride =[_objects objectAtIndex:indexPath.row];
     self.detailViewController.ride = ride;
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+    //[self.navigationController pushViewController:self.detailViewController animated:YES];
+    self.webPageViewController.ride = ride;
+    [self.navigationController pushViewController:self.webPageViewController animated:YES];
 }
 
 @end

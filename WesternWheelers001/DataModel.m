@@ -127,7 +127,7 @@ NSError *httpError=nil;
         NSMutableArray *cells = [self findInTag:row startTag:@"<td>" endTag:@"</td>"];
         NSMutableArray *cellsn = [self findInTag:row startTag:@"<td class=\"numeric\">" endTag:@"</td>"];
         if (cells.count > 0 && cellsn.count >0) {
-            NSString *line = [NSString stringWithFormat:@"Congratulate %@ %@ who led %@ rides this year", cells[0], cells[1], cellsn[3]];
+            NSString *line = [NSString stringWithFormat:@"%@ %@ led %@ rides this year", cells[0], cells[1], cellsn[3]];
             [self.statsLeaders addObject:line];
         }
     }
@@ -162,7 +162,7 @@ NSError *httpError=nil;
                 if (cells.count > 0 && cellsn.count > 0) {
                     NSInteger feetClimbed = [cellsn[3] integerValue];
                     NSString *feetClimbedStr = [formatter stringFromNumber:@(feetClimbed)];
-                    NSString *line = [NSString stringWithFormat:@"Congratulate %@ %@ who rode %@ miles on %@ rides this year", cells[0], cells[1], cellsn[1], cellsn[2]];
+                    NSString *line = [NSString stringWithFormat:@"%@ %@ rode %@ miles on %@ rides this year", cells[0], cells[1], cellsn[1], cellsn[2]];
                     if (feetClimbed > 0){
                         line = [NSString stringWithFormat:@"%@ and climbed %@ feet", line, feetClimbedStr];
                     }
@@ -375,22 +375,23 @@ NSMutableData *responseData;
         if (eventDateGMT != nil) {
             int found=0;
             float offsetSeconds = [timezonePDT secondsFromGMTForDate:eventDateGMT];
+            //BUG: There was a ride listed for 7:45 am Saturday CA time which was displayed on the app as a Friday ride
+            //The Apple libraries had already converted the RSS date from GMT to PST by subtracting 8 hours.
+            //GMT dates from RSS are automatically converted to local time by the Apple libraries. So no further offset is needed.
+            offsetSeconds = 0;
             NSDate *eventDatePDT = [eventDateGMT dateByAddingTimeInterval:offsetSeconds];
-            //NSLog(@"----> %@ [%@] [%@] %@",eventDateStr, eventDateGMT, eventDatePDT, eventTitle);
             Ride *newRide= [[Ride alloc] initFromEvent:event rideDate:eventDatePDT];
-            if (true) {
-                //check if we have it already from a previous load.
-                //Rides are loaded whenever the app goes active so we only want rides added to the site since the last load.
-                for (Ride *r in self.rideList) {
-                    if ([newRide isSameRide:r.rideEventNumber date:r.rideDate]) {
-                        found=1;
-                        break;
-                    }
+            //check if we have it already from a previous load.
+            //Rides are loaded whenever the app goes active so we only want rides added to the site since the last load.
+            for (Ride *r in self.rideList) {
+                if ([newRide isSameRide:r.rideEventNumber date:r.rideDate]) {
+                    found=1;
+                    break;
                 }
-                if (found==0) {
-                    [self.rideList addObject:newRide];
-                    totRidesAdded++;
-                }
+            }
+            if (found==0) {
+                [self.rideList addObject:newRide];
+                totRidesAdded++;
             }
             
             totRidesScanned++;
